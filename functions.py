@@ -12,19 +12,19 @@ recognizer=sr.Recognizer()
 
 def browser(text):
     if 'chrome'in text:
-        a='Opening chrome..'
-        engine.say(a)
+        txt='Opening chrome..'
+        engine.say(txt)
         engine.runAndWait()
         programName = "C:\Program Files\Google\Chrome\Application\chrome.exe"
         subprocess.Popen([programName])
     elif 'play' in text:
-        a='Opening youtube..'
-        engine.say(a)
+        txt='Opening youtube..'
+        engine.say(txt)
         engine.runAndWait()
         pywhatkit.playonyt(text)
     elif 'youtube' in text:
-        b='Opening youtube..'
-        engine.say(b)
+        txt='Opening youtube..'
+        engine.say(txt)
         engine.runAndWait()
         webbrowser.open('www.youtube.com')
 
