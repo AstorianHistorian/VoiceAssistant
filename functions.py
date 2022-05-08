@@ -5,6 +5,7 @@ import pywhatkit
 import pyttsx3
 import webbrowser
 
+
 engine=pyttsx3.init()
 voices=engine.getProperty('voices')
 engine.setProperty('voice',voices[1].id)
@@ -18,12 +19,13 @@ def browser(text):
         programName = "C:\Program Files\Google\Chrome\Application\chrome.exe"
         subprocess.Popen([programName])
     elif 'play' in text:
-        txt='Opening youtube..'
+        text.split('sam')
+        txt=f'Opening {text[1]}'
         engine.say(txt)
         engine.runAndWait()
         pywhatkit.playonyt(text)
     elif 'youtube' in text:
-        txt='Opening youtube..'
+        txt='Opening youtube'
         engine.say(txt)
         engine.runAndWait()
         webbrowser.open('www.youtube.com')
@@ -37,5 +39,6 @@ def check_time(text):
 def wikipedia(text):
     b='Opening Wikipedia..'
     engine.say(b)
-    text = text.split('search')
+    text = text.split('search for')
     webbrowser.open(f'https://en.wikipedia.org/w/index.php?search={text[1]}')
+
